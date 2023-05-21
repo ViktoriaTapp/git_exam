@@ -49,11 +49,8 @@ result = "No"
 
 def get_soup_from_page(url: str) -> BeautifulSoup:
     request = Request(url)
-    try:
-        html_page = urlopen(request)
-        soup = BeautifulSoup(html_page, "lxml")
-    except:
-        return None
+    html_page = urlopen(request)
+    soup = BeautifulSoup(html_page, "lxml")
     return soup
 
 def get_links_from_soup(soup: BeautifulSoup) -> list:
